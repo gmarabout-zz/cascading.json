@@ -1,0 +1,7 @@
+Cascading.utils provide some additional utility classes for Cascading (http://www.cascading.org/).
+
+Currently, the following utilities are provided:
+* JSON support : JSONSplitter, JSONParser. 
+
+
+Copyright 2009, Grégoire Marabout.
