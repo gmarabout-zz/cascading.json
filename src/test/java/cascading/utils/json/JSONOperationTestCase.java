@@ -2,8 +2,7 @@ package cascading.utils.json;
 
 import junit.framework.TestCase;
 import net.sf.json.JSONObject;
-import cascading.utils.json.JSONOperation;
-import cascading.utils.json.JSONPathResolver;
+
 
 /**
  * @author <a href="mailto:gmarabout@gmail.com">Grégoire Marabout</a>
