@@ -1,0 +1,4 @@
+{"name" : "Greg", "age" : 33, "address" : {"city": "Paris", "zipcode": "4321"}, "phones": [{"number": "123345", "type": "landline"}, {"number": "123346", "type": "mobile"}]}
+{"name" : "John", "age" : 45, "address" : {"city": "New-York", "zipcode": "1234"}, "phones": [{"number": "342326", "type": "mobile"}]} 
+{"name" : "Bill", "age" : 23, "address" : {"city": "New-York", "zipcode": "abcd"}, "phones": [] }
+{"name" : "Mike", "age" : 45, "address" : {"city": "London", "zipcode": "4321"}, "phones": [{"number": "56446", "type": "landline"}, {"number": "41634273", "type": "landline"}, {"number": "6674472", "type": "mobile"}]}

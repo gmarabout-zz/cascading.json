@@ -73,5 +73,7 @@
 	<target name="clean">
     <echo message="cleaning..."/>
 		<delete file="${jars.dir}/${ant.project.name}-${cascading.utils.release.version}.jar" />
-	</target> 
+    <delete dir="${build.classes}"/>
+    <delete dir="${build.classes}"/>
+	</target>
 </project>

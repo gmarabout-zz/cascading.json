@@ -1,5 +1,7 @@
-package cascading.utils.json;
+package cascading.utils.json.operation;
 
+import cascading.utils.json.operation.JSONOperation;
+import cascading.utils.json.operation.JSONPathResolver;
 import junit.framework.TestCase;
 import net.sf.json.JSONObject;
 

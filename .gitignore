@@ -1,6 +1,11 @@
 *.iws
 *.ipr
 *.iml
+.classpath
+.project
+.settings/
+bin/
+output/
 jars/
 build/
 out/
