@@ -1,3 +1,6 @@
+/*
+ * Copyright 2009, Grégoire Marabout. All rights reserved.
+ */
 package cascading.utils.json;
 
 import java.io.DataInput;
@@ -17,7 +20,7 @@ import org.apache.hadoop.io.WritableComparable;
  * 
  * @author <a href="mailto:gmarabout@gmail.com">Grégoire Marabout</a>
  */
-public class JSONWritable implements WritableComparable<JSON> {
+public class JSONWritable implements WritableComparable<JSONWritable> {
 
 	private JSON json;
 
@@ -31,7 +34,7 @@ public class JSONWritable implements WritableComparable<JSON> {
 	public JSON get() {
 		return this.json;
 	}
-	
+
 	@Override
 	public String toString() {
 		return json.toString();
@@ -55,13 +58,14 @@ public class JSONWritable implements WritableComparable<JSON> {
 	}
 
 	@Override
-	public int compareTo(JSON obj) {
+	public int compareTo(JSONWritable obj) {
+		JSON jonObj = obj.get();		
 		// Java lacks the duck typing feature :(
 		if (this.json instanceof JSONObject)
-			return ((JSONObject) this.json).compareTo(obj);
+			return ((JSONObject) this.json).compareTo(jonObj);
 		if (this.json instanceof JSONArray)
-			return ((JSONArray) this.json).compareTo(obj);
-		if ((this.json instanceof JSONNull) && (obj instanceof JSONNull))
+			return ((JSONArray) this.json).compareTo(jonObj);
+		if ((this.json instanceof JSONNull) && (jonObj instanceof JSONNull))
 			return 0;
 		return Integer.MAX_VALUE;
 	}
