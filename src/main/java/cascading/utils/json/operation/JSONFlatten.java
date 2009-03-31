@@ -17,7 +17,7 @@ public class JSONFlatten extends JSONOperation implements Function {
 
 	private String[] paths;
 
-	protected JSONFlatten(Fields fieldDeclaration, String... paths) {
+	public JSONFlatten(Fields fieldDeclaration, String... paths) {
 		super(fieldDeclaration);
 		this.paths = paths;
 	}
