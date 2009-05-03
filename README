@@ -1,7 +1,6 @@
-Cascading.utils provide some additional utility classes for Cascading (http://www.cascading.org/).
+Cascading.json provide some JSON utility classes for Cascading (http://www.cascading.org/) :
+JSON parsing, JSON based filtering ans JSON flattening.
 
-Currently, the following utilities are provided:
-* JSON support : JSONSplitter, JSONParser. 
-
+Cascading.json required jsonlib 2.2.3 (provided).
 
 Copyright 2009, Grégoire Marabout.
