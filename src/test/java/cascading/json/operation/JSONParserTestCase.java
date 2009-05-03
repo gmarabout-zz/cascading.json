@@ -1,10 +1,9 @@
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import junit.framework.TestCase;
 import cascading.flow.Flow;
 import cascading.flow.FlowConnector;
 import cascading.operation.AssertionLevel;
-import cascading.operation.Identity;
 import cascading.operation.assertion.AssertNotNull;
 import cascading.operation.assertion.AssertSizeEquals;
 import cascading.pipe.CoGroup;
@@ -15,9 +14,6 @@ import cascading.scheme.TextLine;
 import cascading.tap.Hfs;
 import cascading.tap.Tap;
 import cascading.tuple.Fields;
-import cascading.tuple.TupleEntry;
-import cascading.utils.json.operation.JSONParser;
-import cascading.utils.json.operation.JSONSplitter;
 
 public class JSONParserTestCase extends TestCase {
 	public void testJSONParsing() {

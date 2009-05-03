@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 
-<project name="cascading.utils" default="build" basedir=".">
+<project name="cascading.jsonf" default="build" basedir=".">
 	<property file="${basedir}/build.properties"/>
 	<property file="${basedir}/version.properties"/>
 
 	<property environment="env"/>
 
 	<property name="jars.dir" value="${basedir}/jars"/>
-	<property name="cascading.utils.release.version" value="x.y.z"/>
+	<property name="cascading.json.release.version" value="x.y.z"/>
 
 	<!-- HADOOP -->
 	<property name="hadoop.home" location="${env.HADOOP_HOME}"/>
@@ -60,19 +60,19 @@
 	</target>
 
 	<target name="build" depends="init">
-		<echo message="building cascading.utils JAR..."/>
+		<echo message="building cascading.json JAR..."/>
 		<javac srcdir="${src.java}" destdir="${build.classes}" verbose="off" debug="${javac.debug}">
 			<classpath refid="project.class.path"/>
 		</javac>
 
-		<jar jarfile="${jars.dir}/${ant.project.name}-${cascading.utils.release.version}.jar">
+		<jar jarfile="${jars.dir}/${ant.project.name}-${cascading.json.release.version}.jar">
 			<fileset dir="${build.classes}"/>
 		</jar>
 	</target>
 	
 	<target name="clean">
     <echo message="cleaning..."/>
-		<delete file="${jars.dir}/${ant.project.name}-${cascading.utils.release.version}.jar" />
+		<delete file="${jars.dir}/${ant.project.name}-${cascading.jsoncascading.json.release.version}.jar" />
     <delete dir="${build.classes}"/>
     <delete dir="${build.classes}"/>
 	</target>

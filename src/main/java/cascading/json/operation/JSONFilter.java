@@ -1,7 +1,7 @@
 /*
  * Copyright 2009, Grégoire Marabout. All rights reserved.
  */
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import net.sf.json.JSONObject;
 import cascading.flow.FlowProcess;
@@ -14,7 +14,7 @@ import cascading.tuple.Fields;
  * respect the configuration specified.
  *
  * @author <a href="mailto:gmarabout@gmail.com">Grégoire Marabout</a>
- * @see cascading.utils.json.operation.JSONFilterConfig
+ * @see cascading.json.operation.JSONFilterConfig
  */
 public class JSONFilter extends JSONOperation implements Filter {
 
@@ -56,7 +56,6 @@ public class JSONFilter extends JSONOperation implements Filter {
     return new JSONFilter( new JSONFilterConfig.MustEqual( new String[]{ path }, new Object[]{ value } ) );
   }
 
-
   /**
    * Factory method to create a filter that will exclude tuples
    * <i>not</i> matching the specified specification.
@@ -85,7 +84,7 @@ public class JSONFilter extends JSONOperation implements Filter {
     else if(input instanceof JSONObject) {
       jsonObj = (JSONObject) input;
     } else {
-      throw new RuntimeException("UNexpected object type: "+input.getClass());
+      throw new RuntimeException("Unexpected object type: "+input.getClass());
     }
     return isRemove( jsonObj );
   }

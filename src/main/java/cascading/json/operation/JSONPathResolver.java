@@ -1,7 +1,7 @@
 /*
  * Copyright 2009, Grégoire Marabout. All rights reserved.
  */
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import java.io.Serializable;
 

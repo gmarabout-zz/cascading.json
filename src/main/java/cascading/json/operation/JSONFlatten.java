@@ -1,4 +1,4 @@
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import java.util.Iterator;
 
@@ -6,12 +6,12 @@ import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import cascading.flow.FlowProcess;
+import cascading.json.JSONUtils;
+import cascading.json.JSONWritable;
 import cascading.operation.Function;
 import cascading.operation.FunctionCall;
 import cascading.tuple.Fields;
 import cascading.tuple.Tuple;
-import cascading.utils.json.JSONUtils;
-import cascading.utils.json.JSONWritable;
 
 public class JSONFlatten extends JSONOperation implements Function {
 

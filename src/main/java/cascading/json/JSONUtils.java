@@ -1,7 +1,7 @@
 /*
  * Copyright 2009, Grégoire Marabout. All rights reserved.
  */
-package cascading.utils.json;
+package cascading.json;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONObject;

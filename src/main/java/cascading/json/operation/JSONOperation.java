@@ -1,14 +1,14 @@
 /*
  * Copyright 2009, Grégoire Marabout. All rights reserved. 
  */
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import cascading.json.JSONWritable;
 import cascading.operation.BaseOperation;
 import cascading.tuple.Fields;
-import cascading.utils.json.JSONWritable;
 
 /**
  * @author <a href="mailto:gmarabout@gmail.com">Grégoire Marabout</a>

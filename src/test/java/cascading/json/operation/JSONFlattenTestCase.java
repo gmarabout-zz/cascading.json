@@ -1,8 +1,10 @@
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import junit.framework.TestCase;
 import cascading.flow.Flow;
 import cascading.flow.FlowConnector;
+import cascading.json.operation.JSONFlatten;
+import cascading.json.operation.JSONSplitter;
 import cascading.operation.AssertionLevel;
 import cascading.operation.assertion.AssertNotNull;
 import cascading.pipe.Each;

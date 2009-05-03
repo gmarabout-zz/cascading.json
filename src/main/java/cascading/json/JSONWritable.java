@@ -1,7 +1,7 @@
 /*
  * Copyright 2009, Grégoire Marabout. All rights reserved.
  */
-package cascading.utils.json;
+package cascading.json;
 
 import java.io.DataInput;
 import java.io.DataOutput;

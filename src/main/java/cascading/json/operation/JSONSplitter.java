@@ -2,16 +2,17 @@
  * Copyright 2009, Grégoire Marabout. All rights reserved.
  */
 
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
 import net.sf.json.JSON;
+import net.sf.json.JSONNull;
 import cascading.flow.FlowProcess;
+import cascading.json.JSONUtils;
+import cascading.json.JSONWritable;
 import cascading.operation.Function;
 import cascading.operation.FunctionCall;
 import cascading.tuple.Fields;
 import cascading.tuple.Tuple;
-import cascading.utils.json.JSONUtils;
-import cascading.utils.json.JSONWritable;
 
 /**
  * @author <a href="mailto:gmarabout@gmail.com">Grégoire Marabout</a>
@@ -35,7 +36,11 @@ public class JSONSplitter extends JSONOperation implements Function {
       if (value instanceof JSON) {
     	  value = new JSONWritable((JSON) value);
       }
+      else if (value == null) {
+          value = new JSONWritable(JSONNull.getInstance());
+      }
       output.add( value );
+     
     }
     functionCall.getOutputCollector().add( output );
   }

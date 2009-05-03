@@ -1,6 +1,6 @@
-package cascading.utils.json.operation;
+package cascading.json.operation;
 
-import cascading.utils.json.operation.JSONFilter;
+import cascading.json.operation.JSONFilter;
 import junit.framework.TestCase;
 import net.sf.json.JSONObject;
 
