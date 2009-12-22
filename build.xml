@@ -20,6 +20,7 @@
 	<property name="cascading.libs" value="${cascading.home}/lib"/>
 
 	<property name="src.java" location="${basedir}/src/main/java"/>
+	<property name="src.test.java" location="${basedir}/src/test/java"/>
 	<property name="build.dir" location="${basedir}/build/"/>
 	<property name="build.classes" location="${build.dir}/classes"/>
 
@@ -76,4 +77,28 @@
     <delete dir="${build.classes}"/>
     <delete dir="${build.classes}"/>
 	</target>
+
+  <target name="compile-test" depends="build">
+    <javac srcdir="${src.test.java}" destdir="${build.classes}" verbose="off" debug="${javac.debug}">
+      <classpath refid="project.class.path"/>
+    </javac>
+  </target>
+
+  <target name="clean-compile-test">
+    <delete verbose="off">
+      <fileset dir="${build.classes}" includes="**/*TestCase.class" />
+    </delete>
+  </target>
+
+  <target name="test" depends="compile-test">
+    <junit printsummary="withOutAndErr" fork="yes"> 
+      <classpath refid="project.class.path"/>
+        <formatter type="plain" usefile="false"/>
+        <batchtest>
+            <fileset dir="${build.classes}">
+                <include name="**/*TestCase.class"/>
+            </fileset>
+        </batchtest>
+    </junit>
+  </target>
 </project>
