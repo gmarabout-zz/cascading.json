@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="cascading.jsonf" default="build" basedir=".">
+<project name="cascading.json" default="build" basedir=".">
 	<property file="${basedir}/build.properties"/>
 	<property file="${basedir}/version.properties"/>
 
