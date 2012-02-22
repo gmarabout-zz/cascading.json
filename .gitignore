@@ -4,8 +4,6 @@
 .classpath
 .project
 .settings/
-bin/
+target/
 output/
-jars/
 build/
-out/
