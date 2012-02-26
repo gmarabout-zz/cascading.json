@@ -6,6 +6,26 @@
   <version>0.0.2</version>
   <name>Cascading JSON library</name>
   
+  <developers>
+    <developer>
+      <id>gmarabout</id>
+      <name>Grégoire Marabout</name>
+      <email>gmarabout@gmail.com</email>
+      <url>http://www.gregoire-marabout.net</url>
+    </developer>
+    <developer>
+      <id>brugidou</id>
+      <name>Maxime Brugidou</name>
+      <url>http://twitter.com/#!/brugidou</url>
+    </developer>
+    <developer>
+      <id>nate murray</id>
+      <name>Nate Murray</name>
+      <email>nate@natemurray.com</email>
+      <url>http://twitter.com/#!/brugidou</url>
+    </developer>
+  </developers>
+  
   <repositories>
     <repository>
       <id>conjars.org</id>
