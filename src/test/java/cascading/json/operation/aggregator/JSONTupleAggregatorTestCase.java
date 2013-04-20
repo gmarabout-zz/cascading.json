@@ -2,28 +2,13 @@ package cascading.json.operation.aggregator;
 
 
 import cascading.CascadingTestCase;
-import cascading.flow.Flow;
-import cascading.flow.FlowConnector;
 import cascading.operation.Aggregator;
-import cascading.operation.AssertionLevel;
-import cascading.operation.Buffer;
-import cascading.operation.assertion.AssertNotNull;
-import cascading.operation.assertion.AssertSizeEquals;
-import cascading.pipe.CoGroup;
-import cascading.pipe.Each;
-import cascading.pipe.Pipe;
-import cascading.scheme.Scheme;
-import cascading.scheme.TextLine;
-import cascading.tap.Hfs;
-import cascading.tap.Tap;
 import cascading.tuple.Fields;
 import cascading.tuple.Tuple;
-import cascading.tuple.TupleEntry;
 import cascading.tuple.TupleListCollector;
+import org.junit.Test;
+
 import java.util.Iterator;
-import junit.framework.TestCase;
-import org.junit.* ;
-import static org.junit.Assert.* ;
 
 
 public class JSONTupleAggregatorTestCase extends CascadingTestCase {
