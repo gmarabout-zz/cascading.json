@@ -1,5 +1,8 @@
 package cascading.json.operation;
 
+import cascading.flow.hadoop.HadoopFlowConnector;
+import cascading.scheme.hadoop.TextLine;
+import cascading.tap.hadoop.Hfs;
 import junit.framework.TestCase;
 import cascading.flow.Flow;
 import cascading.flow.FlowConnector;
@@ -10,8 +13,6 @@ import cascading.pipe.CoGroup;
 import cascading.pipe.Each;
 import cascading.pipe.Pipe;
 import cascading.scheme.Scheme;
-import cascading.scheme.TextLine;
-import cascading.tap.Hfs;
 import cascading.tap.Tap;
 import cascading.tuple.Fields;
 
@@ -44,7 +45,7 @@ public class JSONParserTestCase extends TestCase {
 		Pipe grouped = new CoGroup(branch1, new Fields("name"), branch2, new Fields("name"), new Fields("name", "address", "name2", "phones"));
 		
 		Tap output = new Hfs(new TextLine(), "output/parser", true);
-		FlowConnector connector = new FlowConnector();
+		FlowConnector connector = new HadoopFlowConnector();
 		Flow flow = connector.connect(input, output, grouped);
 		
 		flow.complete();

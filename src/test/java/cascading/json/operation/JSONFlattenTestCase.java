@@ -1,17 +1,16 @@
 package cascading.json.operation;
 
+import cascading.flow.hadoop.HadoopFlowConnector;
+import cascading.scheme.hadoop.TextLine;
+import cascading.tap.hadoop.Hfs;
 import junit.framework.TestCase;
 import cascading.flow.Flow;
 import cascading.flow.FlowConnector;
-import cascading.json.operation.JSONFlatten;
-import cascading.json.operation.JSONSplitter;
 import cascading.operation.AssertionLevel;
 import cascading.operation.assertion.AssertNotNull;
 import cascading.pipe.Each;
 import cascading.pipe.Pipe;
 import cascading.scheme.Scheme;
-import cascading.scheme.TextLine;
-import cascading.tap.Hfs;
 import cascading.tap.Tap;
 import cascading.tuple.Fields;
 
@@ -30,7 +29,7 @@ public class JSONFlattenTestCase extends TestCase {
 		assembly = new Each(assembly, AssertionLevel.STRICT, new AssertNotNull());
 		
 		Tap output = new Hfs(new TextLine(), "output/flatten", true);
-		FlowConnector connector = new FlowConnector();
+		FlowConnector connector = new HadoopFlowConnector();
 		Flow flow = connector.connect(input, output, assembly);	
 		flow.complete();
 	}
