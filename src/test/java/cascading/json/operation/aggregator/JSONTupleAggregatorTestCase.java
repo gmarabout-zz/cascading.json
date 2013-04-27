@@ -12,60 +12,59 @@ import java.util.Iterator;
 
 
 public class JSONTupleAggregatorTestCase extends CascadingTestCase {
-  public JSONTupleAggregatorTestCase()
-    {
-    super("json tuple aggregator test case");
+
+    public JSONTupleAggregatorTestCase() {
+        super("json tuple aggregator test case");
     }
 
-  @Override
-  protected void setUp() throws Exception
-    {
-    super.setUp();
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
     }
 
-   @Test
-   public void test_group_tuple_aggregator() {
-     Tuple[] arguments = new Tuple[]{
-       new Tuple("foo","bar"),
-       new Tuple("foo","baz"),
-       new Tuple("bing","bam")};
+    @Test
+    public void test_group_tuple_aggregator() {
+        Tuple[] arguments = new Tuple[]{
+                new Tuple("foo", "bar"),
+                new Tuple("foo", "baz"),
+                new Tuple("bing", "bam")};
 
-     Aggregator aggregator = new JSONTupleAggregator( new Fields("group") );
+        Aggregator aggregator = new JSONTupleAggregator(new Fields("group"));
 
-     Fields resultFields = new Fields("group");
-     TupleListCollector resultEntryCollector = invokeAggregator(aggregator, arguments, resultFields);
-     Iterator<Tuple> iterator = resultEntryCollector.iterator();
+        Fields resultFields = new Fields("group");
+        TupleListCollector resultEntryCollector = invokeAggregator(aggregator, arguments, resultFields);
+        Iterator<Tuple> iterator = resultEntryCollector.iterator();
 
-     Tuple t;
-     String msg = "JSONTupleAggregator test failed";
+        Tuple t;
+        String msg = "JSONTupleAggregator test failed";
 
-     assertEquals(msg, 1, resultEntryCollector.size());
+        assertEquals(msg, 1, resultEntryCollector.size());
 
-     t = iterator.next(); 
-     assertEquals(msg, "[[\"foo\",\"bar\"],[\"foo\",\"baz\"],[\"bing\",\"bam\"]]", t.getString(0));
-   }
+        t = iterator.next();
+        assertEquals(msg, "[[\"foo\",\"bar\"],[\"foo\",\"baz\"],[\"bing\",\"bam\"]]", t.getString(0));
+    }
 
-   @Test
-   public void test_group_tuple_aggregator_others() {
-     Tuple[] arguments = new Tuple[]{
-       new Tuple("zoo","sed"),
-       new Tuple("zed","soo"),
-       new Tuple("bff",null),
-       new Tuple(null,3)};
+    @Test
+    public void test_group_tuple_aggregator_others() {
+        Tuple[] arguments = new Tuple[]{
+                new Tuple("zoo", "sed"),
+                new Tuple("zed", "soo"),
+                new Tuple("bff", null),
+                new Tuple(null, 3)};
 
-     Aggregator aggregator = new JSONTupleAggregator( new Fields("group") );
+        Aggregator aggregator = new JSONTupleAggregator(new Fields("group"));
 
-     Fields resultFields = new Fields("group");
-     TupleListCollector resultEntryCollector = invokeAggregator(aggregator, arguments, resultFields);
-     Iterator<Tuple> iterator = resultEntryCollector.iterator();
+        Fields resultFields = new Fields("group");
+        TupleListCollector resultEntryCollector = invokeAggregator(aggregator, arguments, resultFields);
+        Iterator<Tuple> iterator = resultEntryCollector.iterator();
 
-     Tuple t;
-     String msg = "JSONTupleAggregator test failed";
+        Tuple t;
+        String msg = "JSONTupleAggregator test failed";
 
-     assertEquals(msg, 1, resultEntryCollector.size());
+        assertEquals(msg, 1, resultEntryCollector.size());
 
-     t = iterator.next(); 
-     assertEquals(msg, "[[\"zoo\",\"sed\"],[\"zed\",\"soo\"],[\"bff\",\"\"],[\"\",\"3\"]]", t.getString(0));
-   }
+        t = iterator.next();
+        assertEquals(msg, "[[\"zoo\",\"sed\"],[\"zed\",\"soo\"],[\"bff\",\"\"],[\"\",\"3\"]]", t.getString(0));
+    }
 
 }
