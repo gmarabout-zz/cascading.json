@@ -1,6 +1,5 @@
 package cascading.json.operation;
 
-import cascading.json.operation.JSONFilter;
 import junit.framework.TestCase;
 import net.sf.json.JSONObject;
 
